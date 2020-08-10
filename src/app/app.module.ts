@@ -2,15 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AOLBtnComponent } from './aol-btn/aol-btn.component';
+
 import {FormsModule} from '@angular/forms';
-import { FormListItemComponent } from './aol-btn/form-list-item/form-list-item.component';
+import { AolBtnComponent } from './aol-btn/aol-btn.component';
+
+import { FormFieldComponent } from './aol-btn/form-field/form-field.component';
+import {ModalFormComponent} from './aol-btn/modal-form/modal-form.component';
+import { FormTitleComponent } from './aol-btn/form-title/form-title.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AOLBtnComponent,
-    FormListItemComponent
+    AolBtnComponent,
+    FormFieldComponent,
+    ModalFormComponent,
+    FormTitleComponent
   ],
   imports: [
     BrowserModule,
