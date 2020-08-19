@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'app-modal-form',
@@ -7,10 +8,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ModalFormComponent implements OnInit {
   @Input('heading') heading;
-  public valueSetFlag = false;
-  public aolFlag = false;
-  public vsvFlag = false;
+  name = 'Angular';
+  
+  valuesetForm: FormGroup;
 
+  
   inputProps: {
     valueSet: [
       {
@@ -21,48 +23,45 @@ export class ModalFormComponent implements OnInit {
   };
   modalTitle: String = "AOL Comp";
 
-  constructor() {}
+  constructor(private fb:FormBuilder) {
+    this.valuesetForm = this.fb.group({
+      name: '',
+      valuename: this.fb.array([]) ,
+    });
+  }
+
+  valuenames() : FormArray {
+    return this.valuesetForm.get("valuenames") as FormArray
+  }
+  
+  
+  newValuename(): FormGroup {
+    return this.fb.group({
+      
+      val: '',
+    })
+  }
+
+
+  addValuename() {
+    this.valuenames().push(this.newValuename());
+  }
+   
+  removeValuename(i:number) {
+    this.valuenames().removeAt(i);
+  }
 
   ngOnInit(): void {
   }
 
-  public openValueSet(field){
-    console.log("this.aolFlag",this.aolFlag)
-    if(field == 'valueset'){
-      this.valueSetFlag = true;
-      this.vsvFlag = false;
-      this.aolFlag = true;
-      
-      
-      
-    }
-    else 
-
-    console.log("this.aolFlag",this.aolFlag)
-    console.log("this.valueSetFlag",this.valueSetFlag)
-    
-
-    if(field == 'valuesetvalue'){
-      this.vsvFlag = true;
-      this.valueSetFlag = false;
-      
-    
-      
-    }
-      
-    console.log("this.aolFlag",this.aolFlag)
-    console.log("this.vsvFlag",this.vsvFlag)
-
-    
-
-  }
   //function that closes a modal with id
-  public closeMod(id){
+  public closeMod( ){
     //$(id).modal('hide')
   }
   public closeModal(){
-    this.aolFlag = false;
-    this.valueSetFlag = false;
-    this.vsvFlag = false;
+    
   }
+  onSubmit() {
+    console.log(this.valuesetForm.value);
+}
 }

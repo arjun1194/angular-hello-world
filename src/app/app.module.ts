@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import{ ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -21,7 +22,8 @@ import { FormTitleComponent } from './aol-btn/form-title/form-title.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

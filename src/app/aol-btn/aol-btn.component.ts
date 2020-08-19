@@ -10,6 +10,8 @@ export class AolBtnComponent implements OnInit {
   modalTitle = 'This is the modal title';
   modalBody = 'This is the modal body';
 
+  public closeModal(){}
+
   constructor() {
   }
 
