@@ -5,20 +5,28 @@ import{ ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import {FormsModule} from '@angular/forms';
-import { AolBtnComponent } from './aol-btn/aol-btn.component';
 
-import { FormFieldComponent } from './aol-btn/form-field/form-field.component';
-import {ModalFormComponent} from './aol-btn/modal-form/modal-form.component';
-import { FormTitleComponent } from './aol-btn/form-title/form-title.component';
+
+
+import { ValuesetModalComponent } from './valueset-modal/valueset-modal.component';
+import { ValuesetValueModalComponent } from './valueset-value-modal/valueset-value-modal.component';
+import { MessageModalComponent } from './message-modal/message-modal.component';
+import { ResponsibilityModalComponent } from './responsibility-modal/responsibility-modal.component';
+import { ProfileModalComponent } from './profile-modal/profile-modal.component';
+import { FlexfieldModalComponent } from './flexfield-modal/flexfield-modal.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AolBtnComponent,
-    FormFieldComponent,
-    ModalFormComponent,
-    FormTitleComponent
+    ValuesetModalComponent,
+    ValuesetValueModalComponent,
+    MessageModalComponent,
+    ResponsibilityModalComponent,
+    ProfileModalComponent,
+    FlexfieldModalComponent,
+    
   ],
   imports: [
     BrowserModule,

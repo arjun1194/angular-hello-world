@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalFormComponent } from './modal-form.component';
+import { ValuesetModalComponent } from './valueset-modal.component';
 
-describe('ModalFormComponent', () => {
-  let component: ModalFormComponent;
-  let fixture: ComponentFixture<ModalFormComponent>;
+describe('ValuesetModalComponent', () => {
+  let component: ValuesetModalComponent;
+  let fixture: ComponentFixture<ValuesetModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalFormComponent ]
+      declarations: [ ValuesetModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalFormComponent);
+    fixture = TestBed.createComponent(ValuesetModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

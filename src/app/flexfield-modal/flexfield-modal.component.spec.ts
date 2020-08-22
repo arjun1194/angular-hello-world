@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AolBtnComponent } from './aol-btn.component';
+import { FlexfieldModalComponent } from './flexfield-modal.component';
 
-describe('AolBtnComponent', () => {
-  let component: AolBtnComponent;
-  let fixture: ComponentFixture<AolBtnComponent>;
+describe('FlexfieldModalComponent', () => {
+  let component: FlexfieldModalComponent;
+  let fixture: ComponentFixture<FlexfieldModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AolBtnComponent ]
+      declarations: [ FlexfieldModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AolBtnComponent);
+    fixture = TestBed.createComponent(FlexfieldModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
