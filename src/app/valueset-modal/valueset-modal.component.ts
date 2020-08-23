@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,9 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ValuesetModalComponent implements OnInit {
 
-  
+  @Output() onSubmitted : EventEmitter<any> = new EventEmitter<any>();
+
+
   constructor(private fb: FormBuilder) { }
   valuesetForm = this.fb.group({
     valuesetName:['']
@@ -18,6 +20,11 @@ export class ValuesetModalComponent implements OnInit {
 
   get checkForm(){
     return JSON.stringify(this.valuesetForm.value)
+  }
+
+
+  public submit(): void {
+    this.onSubmitted.emit(this.valuesetForm.value);
   }
 
 }

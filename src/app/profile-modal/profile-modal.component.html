@@ -8,36 +8,40 @@
           </button>
         </div>
         <div class="modal-body">
-            <div class="row">
-                <div class="col-sm-6">
-                    <label for="">System Profile Name</label>
-                    <input class="form-control" placeholder="Username"formControlName="proName">
-                </div>
-                <div class="col-sm-6">
-                    <label for="">Application Shortname</label>
-                    <input class="form-control" placeholder="Username"formControlName="appName">
-                </div>
-                <div class="col-sm-6">
-                    <label for="log_track">Level Name</label>
-                    <select name="log_track" class="custom-select" formControlName="log_track" required>
-                      <option selected value="1" disabled>Select Track</option>
-                      <option value="Site">Site</option>
-                      <option value="App">App</option>
-                      <option value="Resp">Resp</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-6">
-                    <label for="">_change_</label>
-                    <input class="form-control" placeholder="Username">
-                </div>
+           <form [formGroup]="profileForm" >
+             <div class="row">
+               <div class="col-sm-6">
+                 <label>System Profile Name</label>
+                 <input class="form-control" placeholder="Username"formControlName="profileName">
+               </div>
+               <div class="col-sm-6">
+                 <label for="">Application Shortname</label>
+                 <input class="form-control" placeholder="Username"formControlName="applicationShortname">
+               </div>
+               <div class="col-sm-6">
+                 <label>Level Name</label>
+                 <select name="log_track" class="custom-select" formControlName="levelName" required>
+                   <option selected value="Site">Site</option>
+                   <option value="App">App</option>
+                   <option value="Resp">Resp</option>
+                 </select>
+               </div>
+               <div class="col-sm-6" *ngIf="profileForm.value.levelName!==''">
+                 <label>{{labelName[profileForm.value.levelName]}}</label>
+                 <input class="form-control" placeholder="Username" formControlName="prof" *ngIf="profileForm.value.levelName=='Site'">
+                 <input class="form-control" placeholder="Username" formControlName="appShortName" *ngIf="profileForm.value.levelName=='App'">
+                 <input class="form-control" placeholder="Username" formControlName="respName" *ngIf="profileForm.value.levelName=='Resp'">
+               </div>
 
-    
-                
-            </div>
+
+
+             </div>
+           </form>
+          {{checkForm}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" (click)="submit()">Save changes</button>
         </div>
       </div>
     </div>

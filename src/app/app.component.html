@@ -11,15 +11,15 @@
 
 
 
-  
+
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <nav class="nav flex-column">
-    AOL Component 
+    AOL Component
     <div class="dropdown">
 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 Dropdown button
 </button>
-  
+
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
       <a class="dropdown-item" data-toggle="modal" data-target="#modal1">Valueset</a>
       <a class="dropdown-item" data-toggle="modal" data-target="#modal2">Valueset Value</a>
@@ -31,11 +31,14 @@ Dropdown button
   </div>
   </nav>
   </nav>
-  <app-valueset-modal></app-valueset-modal>
-  <app-valueset-value-modal></app-valueset-value-modal>
-  <app-message-modal></app-message-modal>
-  <app-profile-modal></app-profile-modal>  
-  <app-responsibility-modal></app-responsibility-modal>
-  <app-flexfield-modal></app-flexfield-modal>
-  
+  <app-valueset-modal (onSubmitted)="valueSetSubmitted($event)"></app-valueset-modal>
+  <app-valueset-value-modal (onSubmitted)="valuesetValueSubmitted($event)"></app-valueset-value-modal>
+  <app-message-modal (onSubmitted)="messageSubmitted($event)"></app-message-modal>
+  <app-profile-modal (onSubmitted)="profileSubmitted($event)"></app-profile-modal>
+  <app-responsibility-modal (onSubmitted)="respSubmitted($event)"></app-responsibility-modal>
+  <app-flexfield-modal (onSubmitted)="flexfieldSubmitted($event)"></app-flexfield-modal>
+
+
+{{checkForm}}
+
 

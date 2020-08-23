@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./responsibility-modal.component.css']
 })
 export class ResponsibilityModalComponent implements OnInit {
+
+
+  @Output() onSubmitted : EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private fb: FormBuilder) { }
   respForm = this.fb.group({
@@ -19,5 +22,9 @@ export class ResponsibilityModalComponent implements OnInit {
   }
   get checkForm(){
     return JSON.stringify(this.respForm.value)
+  }
+
+  submit() {
+    this.onSubmitted.emit(this.respForm.value);
   }
 }
